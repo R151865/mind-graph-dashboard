@@ -1,0 +1,61 @@
+.mainContainer {
+  display: flex;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.userImg {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-right: -5px;
+  border: 1px solid black;
+}
+
+.textContainer {
+  display: none;
+}
+
+.name {
+  font-size: 14px;
+  font-weight: 600;
+}
+.email {
+  font-size: 12px;
+  font-weight: 400;
+  margin-top: -10px;
+}
+
+
+
+.logoutContainer {
+  background-color: blue;
+  padding: 20px;
+  border-radius: 10px;
+  position: absolute;
+  width: 100%;
+  top: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+
+@media (min-width: 768px) {
+  .textContainer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .userImg {
+    margin-right: 10px;
+  }
+}

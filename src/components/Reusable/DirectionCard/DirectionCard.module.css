@@ -1,0 +1,19 @@
+.card {
+  background-color: white;
+  padding: 40px 40px;
+  border-radius: 10px;
+  width: fit-content;
+}
+.card:hover {
+  background-color: lightblue;
+}
+
+.heading {
+  font-size: 16px;
+}
+
+@media (min-width: 768px) {
+  .heading {
+    font-size: 24px;
+  }
+}

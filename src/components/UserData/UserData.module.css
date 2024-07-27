@@ -1,0 +1,48 @@
+.contentBox {
+  min-height: 100vh;
+  border-radius: 10px;
+  padding: 20px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  background-color: white;
+}
+
+.userDataCardPara {
+  font-size: 15px;
+}
+
+.back{
+  color:black;
+  border-radius: 10px;
+  background-color: white;
+  padding:10px 20px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.tableHead {
+  font-weight: 400;
+  text-align: left;
+  font-size: 14px;
+  padding: 10px;
+  padding-left: 0;
+}
+
+.tableCell {
+  font-weight: 600;
+  text-align: left;
+  font-size: 14px;
+  padding: 10px;
+  padding-left: 0;
+}
+
+
+
+
+
+@media (min-width: 1080px) {
+  .contentBox {
+    padding: 30px;
+  }
+}

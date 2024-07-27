@@ -1,0 +1,42 @@
+.container {
+  background-color: #324ea8;
+  min-height: 100vh;
+  padding: 0px 10px;
+  max-width: 300px;
+  width: 200px;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+
+
+
+.cadsContainer {
+  margin-top: 80px;
+}
+
+.menu {
+  height: 60px;
+  align-items: center;
+  justify-content: start;
+  border-bottom: 1px solid black;
+  margin-bottom: 20px;
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .cadsContainer {
+    margin-top: 10px;
+  }
+
+  .menu {
+    display: flex;
+    height: 70px;
+  }
+
+  .container {
+    width: 30%;
+    max-width: 300px;
+  }
+}

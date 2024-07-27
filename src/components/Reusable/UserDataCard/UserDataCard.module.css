@@ -1,0 +1,25 @@
+.userDataCard {
+  margin-bottom: 40px;
+}
+
+.userDataCardPara {
+  font-size: 16px;
+}
+
+.tableHead {
+  font-weight: 400;
+  text-align: left;
+  font-size: 13px;
+  padding: 10px;
+  padding-left: 0;
+  text-transform: capitalize;
+}
+
+.tableCell {
+  font-weight: 600;
+  text-align: left;
+  font-size: 13px;
+  padding: 10px;
+  padding-left: 0;
+  text-transform: capitalize;
+}

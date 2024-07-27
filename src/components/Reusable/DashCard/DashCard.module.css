@@ -1,0 +1,46 @@
+.dashCard {
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  padding: 10px 10px;
+  margin-bottom: 10px;
+}
+
+.dashCard:hover{
+  background-color: #e3563d;
+}
+
+.isActive{
+  background-color: #e3563d !important;
+}
+
+.dashCardText {
+  font-size: 14px;
+  color: white;
+ 
+  margin-left: 10px;
+  padding: 0;
+
+}
+
+@media (max-width:768px) {
+  .dashCardText{
+    margin: 0;
+    margin-left: 10px;
+  }
+}
+
+
+@media (min-width:768px){
+
+  .dashCard {
+    padding: 0px 10px;
+  }
+
+    .dashCardText {
+        display: flex
+      }
+      
+}
+
+

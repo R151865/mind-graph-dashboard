@@ -1,0 +1,21 @@
+.container {
+}
+
+.heading {
+  font-size: 16px;
+}
+
+.contentBox {
+  min-height: 100vh;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: white;
+  overflow-x: auto;
+}
+
+@media (min-width: 1080px) {
+
+  .contentBox {
+    padding: 30px;
+  }
+}

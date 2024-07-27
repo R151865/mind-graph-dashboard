@@ -1,0 +1,41 @@
+.container{
+   background-color:white; 
+   height:100vh;
+   display:flex;
+   flex-direction:column;
+   justify-content:center;
+   align-items: center;
+}
+
+.heading{
+
+    color:black;
+    font-size:50px;
+text-align:center;
+}
+
+.para{
+
+    text-align:center;
+    margin-top:-30px;
+
+}
+
+
+@media (min-width:768px) {
+    .heading{
+
+
+        font-size:110px;
+
+    }
+    
+    .para{
+    
+        text-align:center;
+        margin-top:-50px;
+        font-size:18px;
+    
+    }
+    
+}
