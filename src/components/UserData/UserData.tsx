@@ -43,11 +43,16 @@ const UserData = () => {
     const fetchCall = async () => {
       setLoading(true);
       const URL = `http://dummyjson.com/users/${id}`;
+      const options: RequestInit = {
+        method: "GET",
+
+      };
+
 
       try {
-        const response = await fetch(URL);
+        const response = await fetch(URL, options);
 
-        if (response.ok && response.status === 200) {
+        if (response.ok) {
           const data: User = await response.json();
           setUser(data);
         } else {

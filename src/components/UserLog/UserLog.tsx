@@ -11,9 +11,11 @@ import { getToken } from "../../utils/cookies";
 const UserLog: React.FC = () => {
   const [open, setOpen] = useState<boolean>(false);
   const [user, setUser] = useState<any>(null);
+  const [loading, setLoading] =  useState<boolean>(true)
 
   useEffect(() => {
     const fetchUser = async () => {
+      setLoading(true)
       const URL = "https://dummyjson.com/user/me";
       const options = {
         method: "GET",
@@ -29,10 +31,16 @@ const UserLog: React.FC = () => {
       } else {
         console.log("errorr");
       }
+      setLoading(false)
     };
 
     fetchUser();
   }, []);
+
+
+  if(loading){
+    return <p>fetching User ..</p>
+  }
 
   return (
     user && (

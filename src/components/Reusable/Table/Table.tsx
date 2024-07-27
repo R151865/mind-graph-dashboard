@@ -5,7 +5,6 @@ import Loader from "../Loader/Loader";
 import Pagination from "../Pagination/Pagination";
 import { Link, useNavigate } from "react-router-dom";
 
-
 interface User {
   id: number;
   firstName: string;
@@ -24,7 +23,14 @@ interface FetchResponse {
   users: User[];
 }
 
-const headData: string[] = ["Name", "Email", "Phone", "Age", "SSN", "Department"];
+const headData: string[] = [
+  "Name",
+  "Email",
+  "Phone",
+  "Age",
+  "SSN",
+  "Department",
+];
 const PAGE_SIZES: number = 10; // Options for items per page
 
 const Table: React.FC = () => {
@@ -33,16 +39,19 @@ const Table: React.FC = () => {
   const [error, setError] = useState<boolean>(false);
   const [users, setUsers] = useState<User[]>([]);
   const [currentPage, setCurrentPage] = useState<number>(1);
-  const [itemsPerPage, setItemsPerPage] = useState<number>(PAGE_SIZES); 
+  const [itemsPerPage, setItemsPerPage] = useState<number>(PAGE_SIZES);
 
   useEffect(() => {
     const fetchCall = async () => {
       setLoading(true);
       const URL = "http://dummyjson.com/users";
+      const options: RequestInit = {
+        method: "GET",
+      };
 
       try {
-        const response = await fetch(URL);
-        if (response.ok && response.status === 200) {
+        const response = await fetch(URL, options);
+        if (response.ok) {
           const data: FetchResponse = await response.json();
           setUsers(data.users);
         } else {
@@ -70,7 +79,10 @@ const Table: React.FC = () => {
   const totalItems: number = users.length;
   const totalPages: number = Math.ceil(totalItems / itemsPerPage);
   const startIndex: number = (currentPage - 1) * itemsPerPage;
-  const paginatedUsers: User[] = users.slice(startIndex, startIndex + itemsPerPage);
+  const paginatedUsers: User[] = users.slice(
+    startIndex,
+    startIndex + itemsPerPage
+  );
 
   // Pagination controls
   const handlePageChange = (pageNumber: number): void => {
@@ -85,7 +97,10 @@ const Table: React.FC = () => {
   };
 
   // Generate page numbers
-  const pageNumbers: number[] = Array.from({ length: totalPages }, (_, index) => index + 1);
+  const pageNumbers: number[] = Array.from(
+    { length: totalPages },
+    (_, index) => index + 1
+  );
 
   return (
     <div>
@@ -101,7 +116,7 @@ const Table: React.FC = () => {
         </thead>
         <tbody>
           {paginatedUsers.map((user) => (
-            <tr 
+            <tr
               style={{ cursor: "pointer" }}
               onClick={() => navigate(`/users/${user.id}`)}
               key={user.id} // Use user.id as the key

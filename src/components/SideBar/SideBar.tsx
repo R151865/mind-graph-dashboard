@@ -28,8 +28,8 @@ const SideBar: React.FC<SideBarProps> = ({closeSideBar=()=>{}}) => {
 
       <div className={styles.cadsContainer}>
         <DashCard
-          isActive={currentPath === ""}
-          link=""
+          isActive={currentPath === "/"}
+          link="/"
           closeSideBar={closeSideBar}
           icon={
             <GridViewIcon
