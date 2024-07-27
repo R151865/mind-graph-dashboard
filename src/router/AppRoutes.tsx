@@ -23,7 +23,7 @@ const AppRoutes: React.FC = () => {
         {token ? (
           <>
             <Route
-              path="dashboard"
+              path="/"
               element={
                 <DashboardLayout>
                   <CardsList />

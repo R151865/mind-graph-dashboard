@@ -86,7 +86,7 @@ const Login: React.FC = () => {
         const data = await response.json();
         setToken(data.token);
         setError(false);
-        navigate("/dashboard");
+        navigate("/");
       } else {
         setError(true);
       }
@@ -99,7 +99,7 @@ const Login: React.FC = () => {
 
   useEffect(() => {
     if (getToken()) {
-      navigate("/dashboard");
+      navigate("/");
     }
   }, [navigate]);
 
