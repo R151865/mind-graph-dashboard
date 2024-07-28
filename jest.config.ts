@@ -3,11 +3,12 @@ module.exports = {
     testEnvironment: 'jsdom', // Environment for React tests
     collectCoverage: true,   // Enable coverage collection
     collectCoverageFrom: [
-      "src/components/*.ts",
-      "src/components/*.tsx",
-      "!src/components/*.test.ts",
-      "!src/components/*.test.tsx",
-      "!src/components/index.ts"
+      "src/components/**/*.ts",  // Include all TypeScript files in src/components
+      "src/components/**/*.tsx", // Include all TypeScript JSX files in src/components
+      "!src/components/**/*.test.ts",  // Exclude test files in src/components
+      "!src/components/**/*.test.tsx", // Exclude test files in src/components
+      "!src/components/**/index.ts",  // Exclude index files in src/componentsf
+      "!src/components/**/index.tsx"  // Exclude index files in src/components
     ],
     coverageThreshold: {
       global: {

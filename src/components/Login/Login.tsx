@@ -134,7 +134,7 @@ const Login: React.FC = () => {
 
         <Button text="Login" loading={loading} />
         {error && (
-          <p className={styles.error}>* Username and password do not match</p>
+          <p className={styles.error}>* Invalid credentials provided</p>
         )}
       </form>
     </div>

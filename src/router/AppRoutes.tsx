@@ -1,15 +1,15 @@
-import React from 'react';
-import { Routes, Route, BrowserRouter, Navigate } from 'react-router-dom';
+import React from "react";
+import { Routes, Route, BrowserRouter, Navigate } from "react-router-dom";
 
-import Login from '../components/Login/Login';
-import DashboardLayout from '../components/Layout/DashboardLayout';
-import UserData from '../components/UserData/UserData';
-import UserList from '../components/UserList/UserList';
-import CardsList from '../components/CardsList/CardsList';
-import NotFound from '../components/Reusable/NotFound/NotFound';
-import Header from '../components/Header/Header';
+import Login from "../components/Login/Login";
+import DashboardLayout from "../components/Layout/DashboardLayout";
+import UserData from "../components/UserData/UserData";
+import UserList from "../components/UserList/UserList";
+import CardsList from "../components/CardsList/CardsList";
+import NotFound from "../components/Reusable/NotFound/NotFound";
+import Header from "../components/Header/Header";
 
-import { getToken } from '../utils/cookies';
+import { getToken } from "../utils/cookies";
 
 // Ensure getToken function has proper typing, returning string | null
 const token = getToken();
@@ -52,12 +52,21 @@ const AppRoutes: React.FC = () => {
             <Route
               path="*"
               element={
+                <DashboardLayout>
+                  <NotFound />
+                </DashboardLayout>
+              }
+            />
+
+            {/* <Route
+              path="*"
+              element={
                 <div>
                   <Header />
                   <NotFound />
                 </div>
               }
-            />
+            /> */}
           </>
         ) : (
           <Route path="*" element={<Navigate to="/login" />} />
