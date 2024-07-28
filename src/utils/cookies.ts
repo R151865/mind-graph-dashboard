@@ -1,18 +1,19 @@
 import Cookies from "js-cookie";
 
-function setToken(token) {
+// Define the types for the functions
+function setToken(token: string): void {
   Cookies.set("jwt-token", token, {
-    expires: 7,
+    expires: 1,
     secure: true,
-    sameSite: "Strict",
+    sameSite: "strict",
   });
 }
 
-function getToken() {
+function getToken(): string | undefined {
   return Cookies.get("jwt-token");
 }
 
-function removeToken() {
+function removeToken(): void {
   Cookies.remove("jwt-token");
 }
 

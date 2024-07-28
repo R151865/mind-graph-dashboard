@@ -8,6 +8,8 @@ import { useNavigate, Navigate } from "react-router-dom";
 
 import { setToken, getToken } from "../../utils/cookies";
 
+import { ACCESS_TOKEN_EXPIRY_TIME_MINS } from "../../constants/constants";
+
 const { REACT_APP_BASE_API_URL } = process.env;
 
 interface FormState {
@@ -74,6 +76,7 @@ const Login: React.FC = () => {
     const body = {
       username: form.username,
       password: form.password,
+      expiresInMins: ACCESS_TOKEN_EXPIRY_TIME_MINS,
     };
     const options: RequestInit = {
       method: "POST",

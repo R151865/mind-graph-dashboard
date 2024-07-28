@@ -56,6 +56,8 @@ const Table: React.FC = () => {
         if (response.ok) {
           const data: FetchResponse = await response.json();
           setUsers(data.users);
+          
+          console.log(data)
         } else {
           setError(true);
         }
@@ -67,7 +69,7 @@ const Table: React.FC = () => {
     };
 
     fetchCall();
-  }, []);
+  }, [currentPage]);
 
   if (loading) {
     return <Loader />;
