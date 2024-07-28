@@ -92,6 +92,7 @@ const Login: React.FC = () => {
         setToken(data.token);
         setError(false);
         navigate("/");
+        window.location.reload()
       } else {
         setError(true);
       }
@@ -101,6 +102,13 @@ const Login: React.FC = () => {
       setLoading(false);
     }
   };
+
+  useEffect(()=>{
+    if (getToken() !== undefined) {
+      navigate("/");
+    }
+    
+  }, [])
 
   if (getToken() !== undefined) {
     return <Navigate to="/" />;
