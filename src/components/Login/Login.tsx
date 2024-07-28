@@ -1,12 +1,14 @@
-import React, { useState, useEffect, ChangeEvent, FormEvent } from 'react';
+import React, { useState, useEffect, ChangeEvent, FormEvent } from "react";
 import styles from "./Login.module.css";
 
 import Username from "./Username/Username";
 import Password from "./Password/Password";
 import Button from "./Button/Button";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Navigate } from "react-router-dom";
 
 import { setToken, getToken } from "../../utils/cookies";
+
+const { REACT_APP_BASE_API_URL } = process.env;
 
 interface FormState {
   username: string;
@@ -68,7 +70,7 @@ const Login: React.FC = () => {
 
   const postUserLogin = async () => {
     setLoading(true);
-    const URL = "https://dummyjson.com/user/login";
+    const URL = `${REACT_APP_BASE_API_URL}user/login`;
     const body = {
       username: form.username,
       password: form.password,
@@ -97,11 +99,9 @@ const Login: React.FC = () => {
     }
   };
 
-  useEffect(() => {
-    if (getToken()) {
-      navigate("/");
-    }
-  }, [navigate]);
+  if (getToken() !== undefined) {
+    return <Navigate to="/" />;
+  }
 
   return (
     <div className={`${styles.mainContainer}`}>

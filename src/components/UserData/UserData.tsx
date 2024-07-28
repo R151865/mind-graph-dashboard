@@ -33,6 +33,8 @@ interface User {
   company: Company;
 }
 
+const { REACT_APP_BASE_API_URL } = process.env;
+
 const UserData = () => {
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<boolean>(false);
@@ -42,12 +44,10 @@ const UserData = () => {
   useEffect(() => {
     const fetchCall = async () => {
       setLoading(true);
-      const URL = `http://dummyjson.com/users/${id}`;
+      const URL = `${REACT_APP_BASE_API_URL}users/${id}`;
       const options: RequestInit = {
         method: "GET",
-
       };
-
 
       try {
         const response = await fetch(URL, options);

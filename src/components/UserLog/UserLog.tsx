@@ -8,6 +8,8 @@ import { useEffect, useState } from "react";
 
 import { getToken } from "../../utils/cookies";
 
+const { REACT_APP_BASE_API_URL } = process.env;
+
 const UserLog: React.FC = () => {
   const [open, setOpen] = useState<boolean>(false);
   const [user, setUser] = useState<any>(null);
@@ -16,7 +18,7 @@ const UserLog: React.FC = () => {
   useEffect(() => {
     const fetchUser = async () => {
       setLoading(true)
-      const URL = "https://dummyjson.com/user/me";
+      const URL =  `${REACT_APP_BASE_API_URL}user/me`
       const options = {
         method: "GET",
         headers: {

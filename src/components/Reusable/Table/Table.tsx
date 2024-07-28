@@ -33,6 +33,8 @@ const headData: string[] = [
 ];
 const PAGE_SIZES: number = 10; // Options for items per page
 
+const { REACT_APP_BASE_API_URL } = process.env;
+
 const Table: React.FC = () => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState<boolean>(true);
@@ -44,7 +46,7 @@ const Table: React.FC = () => {
   useEffect(() => {
     const fetchCall = async () => {
       setLoading(true);
-      const URL = "http://dummyjson.com/users";
+      const URL = `${REACT_APP_BASE_API_URL}users`;
       const options: RequestInit = {
         method: "GET",
       };
